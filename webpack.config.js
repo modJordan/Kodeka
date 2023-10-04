@@ -23,6 +23,7 @@ module.exports = {
       template: './src/index.html',
       inject: 'body'
     })
+    
   ],
   module: {
     rules: [
@@ -51,7 +52,14 @@ module.exports = {
           'html-loader'
         ]
       },
-      
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }      
+
     ]
   }
 };
